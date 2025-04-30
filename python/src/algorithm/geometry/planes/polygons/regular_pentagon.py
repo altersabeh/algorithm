@@ -21,8 +21,6 @@ class RegularPentagon(Polygon):
 
     pentagon: RegularPentagon = RegularPentagon(5)
 
-    print(f"Pentagon Side: {pentagon.side}")
-    print(f"Pentagon Apothem: {pentagon.apothem}")
     print(f"Pentagon Perimeter: {pentagon.perimeter()}")
     print(f"Pentagon Area: {pentagon.area()}")
     ```

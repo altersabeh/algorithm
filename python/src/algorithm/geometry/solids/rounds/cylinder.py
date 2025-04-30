@@ -18,7 +18,9 @@ class Cylinder(Round):
     -------
     ```
     cylinder = Cylinder(radius=5, height=10)
-    print(cylinder.volume())
+
+    print(f"Cylinder Surface Area: {cylinder.surface_area()}")
+    print(f"Cylinder Volume: {cylinder.volume()}")
     ```
     """
 

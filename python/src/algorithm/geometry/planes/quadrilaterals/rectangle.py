@@ -20,9 +20,6 @@ class Rectangle(PlaneFigure):
 
     rectangle: Rectangle = Rectangle(3, 4)
 
-    print(f"Rectangle Width: {rectangle.width}")
-    print(f"Rectangle Height: {rectangle.height}")
-    print(f"Rectangle Diagonal: {rectangle.diagonal}")
     print(f"Rectangle Perimeter: {rectangle.perimeter()}")
     print(f"Rectangle Area: {rectangle.area()}")
     ```

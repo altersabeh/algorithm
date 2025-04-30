@@ -21,8 +21,6 @@ class RegularDecagon(Polygon):
 
     decagon: RegularDecagon = RegularDecagon(5)
 
-    print(f"Decagon Side: {decagon.side}")
-    print(f"Decagon Apothem: {decagon.apothem}")
     print(f"Decagon Perimeter: {decagon.perimeter()}")
     print(f"Decagon Area: {decagon.area()}")
     ```

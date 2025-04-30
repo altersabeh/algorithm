@@ -22,8 +22,6 @@ class RegularTrigon(Polygon):
 
     triangle: RegularTrigon = RegularTrigon(5)
 
-    print(f"Triangle Side: {triangle.side}")
-    print(f"Triangle Apothem: {triangle.apothem}")
     print(f"Triangle Perimeter: {triangle.perimeter()}")
     print(f"Triangle Area: {triangle.area()}")
     ```

@@ -21,8 +21,6 @@ class Circle(Curve):
 
     circle: Circle = Circle(5)
 
-    print(f"Circle Radius: {circle.radius}")
-    print(f"Circle Diameter: {circle.diameter}")
     print(f"Circle Perimeter: {circle.perimeter()}")
     print(f"Circle Area: {circle.area()}")
     ```

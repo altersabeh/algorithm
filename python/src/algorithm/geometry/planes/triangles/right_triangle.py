@@ -21,9 +21,6 @@ class RightTriangle(Triangle):
 
     right_triangle: RightTriangle = RightTriangle(3, 4)
 
-    print(f"Right Triangle Base: {right_triangle.base}")
-    print(f"Right Triangle Height: {right_triangle.height}")
-    print(f"Right Triangle Hypotenuse: {right_triangle.hypotenuse}")
     print(f"Right Triangle Perimeter: {right_triangle.perimeter()}")
     print(f"Right Triangle Area: {right_triangle.area()}")
     ```

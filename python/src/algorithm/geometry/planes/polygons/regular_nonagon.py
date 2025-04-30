@@ -21,8 +21,6 @@ class RegularNonagon(Polygon):
 
     nonagon: RegularNonagon = RegularNonagon(5)
 
-    print(f"Nonagon Side: {nonagon.side}")
-    print(f"Nonagon Apothem: {nonagon.apothem}")
     print(f"Nonagon Perimeter: {nonagon.perimeter()}")
     print(f"Nonagon Area: {nonagon.area()}")
     ```

@@ -21,8 +21,6 @@ class RegularHexagon(Polygon):
 
     hexagon: RegularHexagon = RegularHexagon(5)
 
-    print(f"Hexagon Side: {hexagon.side}")
-    print(f"Hexagon Apothem: {hexagon.apothem}")
     print(f"Hexagon Perimeter: {hexagon.perimeter()}")
     print(f"Hexagon Area: {hexagon.area()}")
     ```

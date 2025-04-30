@@ -20,8 +20,6 @@ class IsoscelesTriangle(Triangle):
 
     triangle: IsoscelesTriangle = IsoscelesTriangle(5, 7)
 
-    print(f"Triangle Base: {triangle.base}")
-    print(f"Triangle Height: {triangle.height}")
     print(f"Triangle Perimeter: {triangle.perimeter()}")
     print(f"Triangle Area: {triangle.area()}")
     ```

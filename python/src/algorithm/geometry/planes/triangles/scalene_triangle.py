@@ -20,9 +20,6 @@ class ScaleneTriangle(Triangle):
 
     triangle: ScaleneTriangle = ScaleneTriangle(3, 4, 5)
 
-    print(f"Triangle Side A: {triangle.side_a}")
-    print(f"Triangle Side B: {triangle.side_b}")
-    print(f"Triangle Side C: {triangle.side_c}")
     print(f"Triangle Perimeter: {triangle.perimeter()}")
     print(f"Triangle Area: {triangle.area()}")
     ```

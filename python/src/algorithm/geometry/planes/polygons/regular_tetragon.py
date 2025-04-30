@@ -21,8 +21,6 @@ class RegularTetragon(Polygon):
 
     square: RegularTetragon = RegularTetragon(5)
 
-    print(f"Square Side: {square.side}")
-    print(f"Square Apothem: {square.apothem}")
     print(f"Square Perimeter: {square.perimeter()}")
     print(f"Square Area: {square.area()}")
     ```

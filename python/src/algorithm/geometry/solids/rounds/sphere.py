@@ -19,10 +19,8 @@ class Sphere(SolidFigure):
 
     sphere: Sphere = Sphere(5)
 
-    print(f"Sphere Radius: {sphere.radius}")
-    print(f"Sphere Diameter: {sphere.diameter}")
-    print(f"Sphere Volume: {sphere.volume()}")
     print(f"Sphere Surface Area: {sphere.surface_area()}")
+    print(f"Sphere Volume: {sphere.volume()}")
     ```
     """
 
@@ -44,8 +42,8 @@ class Sphere(SolidFigure):
         """
         return self._radius * 2
 
-    def volume(self) -> float:
-        return (4 / 3) * math.pi * (self._radius**3)
-
     def surface_area(self) -> float:
-        return 4 * math.pi * (self._radius**2)
+        return 4 * math.pi * pow(self._radius, 2)
+
+    def volume(self) -> float:
+        return (4 / 3) * math.pi * pow(self._radius, 3)

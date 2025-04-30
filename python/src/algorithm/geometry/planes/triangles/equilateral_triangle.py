@@ -20,7 +20,6 @@ class EquilateralTriangle(Triangle):
 
     triangle: EquilateralTriangle = EquilateralTriangle(5)
 
-    print(f"Triangle Side: {triangle.side}")
     print(f"Triangle Perimeter: {triangle.perimeter()}")
     print(f"Triangle Area: {triangle.area()}")
     ```

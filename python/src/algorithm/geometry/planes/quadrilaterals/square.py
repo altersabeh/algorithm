@@ -20,8 +20,6 @@ class Square(PlaneFigure):
 
     square: Square = Square(5)
 
-    print(f"Square Side: {square.side}")
-    print(f"Square Diagonal: {square.diagonal}")
     print(f"Square Perimeter: {square.perimeter()}")
     print(f"Square Area: {square.area()}")
     ```

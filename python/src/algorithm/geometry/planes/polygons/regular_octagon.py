@@ -21,8 +21,6 @@ class RegularOctagon(Polygon):
 
     octagon: RegularOctagon = RegularOctagon(5)
 
-    print(f"Octagon Side: {octagon.side}")
-    print(f"Octagon Apothem: {octagon.apothem}")
     print(f"Octagon Perimeter: {octagon.perimeter()}")
     print(f"Octagon Area: {octagon.area()}")
     ```

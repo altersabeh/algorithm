@@ -21,8 +21,6 @@ class RegularHeptagon(Polygon):
 
     heptagon: RegularHeptagon = RegularHeptagon(5)
 
-    print(f"Heptagon Side: {heptagon.side}")
-    print(f"Heptagon Apothem: {heptagon.apothem}")
     print(f"Heptagon Perimeter: {heptagon.perimeter()}")
     print(f"Heptagon Area: {heptagon.area()}")
     ```
