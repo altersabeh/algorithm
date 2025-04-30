@@ -1,0 +1,7 @@
+build_isolation = true
+
+[venv]
+in_project = true
+
+[python]
+use_venv = true

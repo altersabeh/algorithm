@@ -1,0 +1,40 @@
+[project]
+name = "algorithm"
+version = "1.0.0"
+description = "Default template for PDM package"
+authors = [{ name = "AlterSabeh", email = "betamaximum22@gmail.com" }]
+dependencies = []
+requires-python = ">=3.13"
+readme = "README.md"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.5",
+  "pytest-cov>=6.1.1",
+  "ruff>=0.11.7",
+  "behave>=1.2.7.dev6",
+  "pyright>=1.1.400",
+  "bandit>=1.8.3",
+  "pylint>=3.3.6",
+  "mypy>=1.15.0",
+]
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.build]
+package-dir = "src"
+
+[tool.pdm.scripts]
+"cucumber" = "behave"
+"format" = "ruff format src/ tests/ features/"
+"format-check" = "ruff format --check src/ tests/ features/"
+"lint" = "pylint src/"
+"pre_build" = "stubgen -p algorithm -o src"
+"test" = "pytest"
+"test-cov" = "pytest --cov=algorithm"

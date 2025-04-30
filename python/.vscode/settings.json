@@ -1,0 +1,22 @@
+{
+  "files.watcherExclude": {
+    ".pdm-build/**": true,
+    ".pdm-plugins/**": true,
+    ".pytest-cache/**": true,
+    ".ruff-cache/**": true,
+    ".venv/**": true,
+    "dist/**": true,
+    "htmlcov/**": true
+  },
+  "python.analysis.enablePytestSupport": true,
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/src",
+  ],
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.terminal.activateEnvironment": true,
+  "python.testing.pytestEnabled": true,
+  "pylint.ignorePatterns": [
+    "**/features/**/*.py",
+    "**/tests/**/*.py"
+  ]
+}
