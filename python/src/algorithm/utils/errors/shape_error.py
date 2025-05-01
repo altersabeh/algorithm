@@ -26,9 +26,6 @@ class ShapeError(ABC, Exception):
         return f"{shape} with {dim_label} {dimensions} is invalid. {reason}."
 
     def _format_dimensions(self):
-        if len(self.dimensions) == 0:
-            return "no dimensions"
-
         match self.dimensions:
             case [d]:
                 return str(d)
@@ -37,3 +34,5 @@ class ShapeError(ABC, Exception):
             case [*rest, last]:
                 rest_str = ", ".join(map(str, rest))
                 return f"{rest_str}, and {last}"
+            case _:
+                return "no dimensions"
