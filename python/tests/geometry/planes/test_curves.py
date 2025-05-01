@@ -4,7 +4,7 @@ import pytest
 from fixtures import helper
 
 from algorithm.geometry.planes.curves import Circle
-from algorithm.utils.errors.values import NegativeValueError, ZeroValueError
+from algorithm.utils.errors.parameters import NegativeValueError, ZeroValueError
 
 
 class TestCircle:
