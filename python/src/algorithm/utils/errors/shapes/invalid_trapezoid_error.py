@@ -1,4 +1,10 @@
-class InvalidTrapezoidError(Exception):
+from typing import final
+
+from .. import ShapeError
+
+
+@final
+class InvalidTrapezoidError(ShapeError):
     """
     `InvalidTrapezoidError`
     ==========================
@@ -15,16 +21,8 @@ class InvalidTrapezoidError(Exception):
     """
 
     def __init__(self, base_a: float, base_b: float):
-        self.base_a = base_a
-        self.base_b = base_b
-        super().__init__(self.__str__())
-
-    def __str__(self):
-        error_name = self.__class__.__name__
-        # pylint: disable=consider-using-f-string
-        message = "{}: The bases {}, {} do not satisfy the trapezoid inequality.".format(
-            error_name,
-            self.base_a,
-            self.base_b,
+        super().__init__(
+            shape="Trapezoid",
+            dimensions=[base_a, base_b],
+            reason="The bases do not satisfy the trapezoid inequality.",
         )
-        return message
