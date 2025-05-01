@@ -2,7 +2,20 @@
 Utility functions for validating parameter values.
 """
 
-from .errors import ImpossibleTriangleError, NegativeValueError, ZeroValueError
+from .errors import AcuteAngleError, ImpossibleTriangleError, NegativeValueError, ZeroValueError
+
+
+def validate_acute_angle(value: float, name: str):
+    """
+    Validates that the given angle is acute (between 0 and 90 degrees).
+
+    Raises `AcuteAngleError` if the angle is not acute.
+    """
+    match value:
+        case v if v <= 0.0 or v >= 90.0:
+            raise AcuteAngleError(name, value)
+        case _:
+            return
 
 
 def validate_positive(value: float, name: str):
