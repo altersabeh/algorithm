@@ -5,7 +5,7 @@ class AcuteAngleError(ValueError):
 
     Exception raised when the provided angle is not acute.
 
-    Attributes:
+    Parameters:
         name (str): The name of the entity that has the angle.
         value (float): The value of the angle that was provided.
 

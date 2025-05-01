@@ -12,7 +12,7 @@ class ZeroParameterError(ParameterError):
     Exception raised when a zero value is encountered where a nonzero value is
     expected.
 
-    Attributes:
+    Parameters:
         name (str): The name of the parameter or variable that caused the error.
         value (float): The invalid (zero) value provided.
 

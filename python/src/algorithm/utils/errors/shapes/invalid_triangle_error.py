@@ -11,7 +11,7 @@ class InvalidTriangleError(ShapeError):
 
     Exception raised when the provided side lengths cannot form a valid triangle.
 
-    Attributes:
+    Parameters:
         side_a (float): Length of side a.
         side_b (float): Length of side b.
         side_c (float): Length of side c.

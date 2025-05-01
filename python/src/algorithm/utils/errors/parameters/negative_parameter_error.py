@@ -12,7 +12,7 @@ class NegativeParameterError(ParameterError):
     Exception raised when a negative value is encountered where a positive value
     is expected.
 
-    Attributes:
+    Parameters:
         name (str): The name of the parameter or variable that caused the error.
         value (float): The invalid (negative) value provided.
 

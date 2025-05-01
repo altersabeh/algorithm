@@ -11,7 +11,7 @@ class InvalidTrapezoidError(ShapeError):
 
     Exception raised when the provided bases cannot form a valid trapezoid.
 
-    Attributes:
+    Parameters:
         base_a (float): Length of base a.
         base_b (float): Length of base b.
 
