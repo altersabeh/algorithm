@@ -6,10 +6,6 @@ use super::super::ShapeError;
 /// # `InvalidTrapezoidError`
 /// Error returned when the provided bases cannot form a trapezoid.
 ///
-/// ## Parameters
-/// - `base_a (f64)` The length of the first base.
-/// - `base_b (f64)` The length of the second base.
-///
 /// ## Example
 /// ```rust
 /// use algorithm::utils::errors::shapes::InvalidTrapezoidError;
@@ -30,6 +26,13 @@ pub struct InvalidTrapezoidError {
 }
 
 impl InvalidTrapezoidError {
+    /// Creates a new instance of `InvalidTrapezoidError`.
+    ///
+    /// This constructor accepts two base lengths as `f64` values.
+    ///
+    /// - **Parameters**
+    ///     - **base_a** The length of the first base.
+    ///     - **base_b** The length of the second base.
     pub fn new(base_a: f64, base_b: f64) -> Self {
         Self { dimensions: [base_a, base_b] }
     }

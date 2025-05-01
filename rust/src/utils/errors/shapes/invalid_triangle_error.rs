@@ -6,11 +6,6 @@ use super::super::ShapeError;
 /// # InvalidTriangleError
 /// Error returned when the provided side lengths cannot form a triangle.
 ///
-/// ## Parameters
-/// - `side_a (f64)` The length of the first side.
-/// - `side_b (f64)` The length of the second side.
-/// - `side_c (f64)` The length of the third side.
-///
 /// ## Example
 /// ```rust
 /// use algorithm::utils::errors::shapes::InvalidTriangleError;
@@ -32,6 +27,14 @@ pub struct InvalidTriangleError {
 }
 
 impl InvalidTriangleError {
+    /// Creates a new instance of `InvalidTriangleError`.
+    ///
+    /// This constructor accepts three side lengths as `f64` values.
+    ///
+    /// - **Parameters**
+    ///     - **side_a** The length of the first side.
+    ///     - **side_b** The length of the second side.
+    ///     - **side_c** The length of the third side.
     pub fn new(side_a: f64, side_b: f64, side_c: f64) -> Self {
         Self { dimensions: [side_a, side_b, side_c] }
     }

@@ -3,13 +3,9 @@ use std::fmt::{Display, Formatter, Result};
 
 use super::super::ParameterError;
 
-/// # `NegativeParameterError`
+/// # NegativeParameterError
 /// Error returned when a negative value is provided for a parameter that
 /// requires a non-negative value.
-///
-/// ## Parameters
-/// - `name (String)` The name of the parameter.
-/// - `value (f64)` The invalid (negative) value provided.
 ///
 /// ## Example
 /// ```rust
@@ -28,6 +24,14 @@ pub struct NegativeParameterError {
 }
 
 impl NegativeParameterError {
+    /// Creates a new instance of `NegativeParameterError`.
+    ///
+    /// This constructor accepts a parameter name as a `str` and a value as a
+    /// `float`.
+    ///
+    /// - **Parameters**
+    ///     - **name** The name of the parameter that caused the error.
+    ///     - **value** The invalid (negative) value provided.
     pub fn new(name: String, value: f64) -> Self {
         NegativeParameterError { name, value }
     }

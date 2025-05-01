@@ -7,10 +7,6 @@ use super::super::ParameterError;
 /// Error returned when a zero value is provided for a parameter that requires a
 /// non-zero value.
 ///
-/// ## Parameters
-/// - `name (String)` The name of the parameter.
-/// - `value (f64)` The invalid (zero) value provided.
-///
 /// ## Example
 /// ```rust
 /// use algorithm::utils::errors::parameters::ZeroParameterError;
@@ -28,6 +24,14 @@ pub struct ZeroParameterError {
 }
 
 impl ZeroParameterError {
+    /// Creates a new instance of `ZeroParameterError`.
+    ///
+    /// This constructor accepts a parameter name as a `str` and a value as a
+    /// `float`.
+    ///
+    /// - **Parameters**
+    ///    - **name** The name of the parameter that caused the error.
+    ///    - **value** The invalid (zero) value provided.
     pub fn new(name: String, value: f64) -> Self {
         ZeroParameterError { name, value }
     }
