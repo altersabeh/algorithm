@@ -2,7 +2,9 @@
 Utility functions for validating parameter values.
 """
 
-from .errors import AcuteAngleError, ImpossibleTriangleError, NegativeValueError, ZeroValueError
+from .errors.angles import AcuteAngleError
+from .errors.shapes import ImpossibleTriangleError
+from .errors.values import NegativeValueError, ZeroValueError
 
 
 def validate_acute_angle(value: float, name: str):
