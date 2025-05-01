@@ -23,7 +23,7 @@ use super::super::ShapeError;
 /// than or equal to the length of the third side.
 #[derive(Debug)]
 pub struct InvalidTriangleError {
-    pub dimensions: [f64; 3],
+    pub dimensions: Vec<f64>,
 }
 
 impl InvalidTriangleError {
@@ -36,7 +36,7 @@ impl InvalidTriangleError {
     ///     - **side_b** The length of the second side.
     ///     - **side_c** The length of the third side.
     pub fn new(side_a: f64, side_b: f64, side_c: f64) -> Self {
-        Self { dimensions: [side_a, side_b, side_c] }
+        Self { dimensions: vec![side_a, side_b, side_c] }
     }
 }
 

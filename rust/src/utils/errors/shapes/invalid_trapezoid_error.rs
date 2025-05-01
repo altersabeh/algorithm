@@ -22,7 +22,7 @@ use super::super::ShapeError;
 /// trapezoid.
 #[derive(Debug)]
 pub struct InvalidTrapezoidError {
-    pub dimensions: [f64; 2],
+    pub dimensions: Vec<f64>,
 }
 
 impl InvalidTrapezoidError {
@@ -34,7 +34,7 @@ impl InvalidTrapezoidError {
     ///     - **base_a** The length of the first base.
     ///     - **base_b** The length of the second base.
     pub fn new(base_a: f64, base_b: f64) -> Self {
-        Self { dimensions: [base_a, base_b] }
+        Self { dimensions: vec![base_a, base_b] }
     }
 }
 
