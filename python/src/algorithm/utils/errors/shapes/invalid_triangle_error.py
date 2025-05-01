@@ -6,15 +6,9 @@ from .. import ShapeError
 @final
 class InvalidTriangleError(ShapeError):
     """
-    `InvalidTriangleError`
-    ======================
+    InvalidTriangleError
+    ====================
     Exception raised when the provided side lengths cannot form a valid triangle.
-
-    Parameters
-    ----------
-    - `side_a (float)` The length of the first side.
-    - `side_b (float)` The length of the second side.
-    - `side_c (float)` The length of the third side.
 
     Example
     -------
@@ -36,6 +30,16 @@ class InvalidTriangleError(ShapeError):
     """
 
     def __init__(self, side_a: float, side_b: float, side_c: float):
+        """
+        Initializes a new instance of `InvalidTriangleError`.
+
+        This constructor accepts three side lengths as `float` values.
+
+        - **Parameters**
+            - **side_a** The length of the first side.
+            - **side_b** The length of the second side.
+            - **side_c** The length of the third side.
+        """
         super().__init__(
             "Triangle",
             [side_a, side_b, side_c],

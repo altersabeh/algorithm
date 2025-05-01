@@ -6,14 +6,9 @@ from .. import ShapeError
 @final
 class InvalidTrapezoidError(ShapeError):
     """
-    `InvalidTrapezoidError`
-    =======================
+    InvalidTrapezoidError
+    =====================
     Exception raised when the provided bases cannot form a valid trapezoid.
-
-    Parameters
-    ----------
-    - `base_a (float)` The length of the first base.
-    - `base_b (float)` The length of the second base.
 
     Example
     -------
@@ -34,4 +29,13 @@ class InvalidTrapezoidError(ShapeError):
     """
 
     def __init__(self, base_a: float, base_b: float):
+        """
+        Initializes a new instance of `InvalidTrapezoidError`.
+
+        This constructor accepts two base lengths as `float` values.
+
+        - **Parameters**
+            - **base_a** The length of the first base.
+            - **base_b** The length of the second base.
+        """
         super().__init__("Trapezoid", [base_a, base_b], "Bases do not form a trapezoid")

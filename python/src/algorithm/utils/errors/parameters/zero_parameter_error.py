@@ -6,15 +6,10 @@ from .. import ParameterError
 @final
 class ZeroParameterError(ParameterError):
     """
-    `ZeroValueError`
-    ================
+    ZeroValueError
+    ==============
     Exception raised when a zero value is encountered where a nonzero value is
     expected.
-
-    Parameters
-    ----------
-    - `name (str)` The name of the parameter.
-    - `value (float)` The invalid (zero) value provided.
 
     Example
     -------
@@ -30,4 +25,14 @@ class ZeroParameterError(ParameterError):
     """
 
     def __init__(self, name: str, value: float):
+        """
+        Initializes a new instance of `ZeroParameterError`.
+
+        This constructor accepts a parameter name as a `str` and a value as a
+        `float`.
+
+        - Parameters
+            - **name** The name of the parameter that caused the error.
+            - **value** The invalid (zero) value provided.
+        """
         super().__init__(name, value, "a nonzero value")
