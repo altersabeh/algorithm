@@ -1,6 +1,6 @@
 from fixtures import helper
 
-from algorithm.utils.errors import NegativeValueError, ZeroValueError
+from algorithm.utils.errors.values import NegativeValueError, ZeroValueError
 
 
 def test_negative_value_error_returns_correct_message():
