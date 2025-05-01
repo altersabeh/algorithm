@@ -3,7 +3,7 @@ Utility functions for validating parameter values.
 """
 
 from .errors.angles import AcuteAngleError
-from .errors.parameters import NegativeValueError, ZeroValueError
+from .errors.parameters import NegativeParameterError, ZeroParameterError
 from .errors.shapes import InvalidTrapezoidError, InvalidTriangleError
 
 
@@ -29,9 +29,9 @@ def validate_positive(value: float, name: str):
     """
     match value:
         case v if v < 0.0:
-            raise NegativeValueError(name, value)
+            raise NegativeParameterError(name, value)
         case 0.0:
-            raise ZeroValueError(name, value)
+            raise ZeroParameterError(name, value)
         case _:
             return
 
