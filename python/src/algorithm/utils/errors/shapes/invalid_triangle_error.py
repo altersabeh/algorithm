@@ -25,5 +25,5 @@ class InvalidTriangleError(ShapeError):
         super().__init__(
             "Triangle",
             [side_a, side_b, side_c],
-            "The side lengths do not satisfy the triangle inequality.",
+            "Side lengths do not form a triangle.",
         )
