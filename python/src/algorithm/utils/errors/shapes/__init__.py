@@ -6,3 +6,4 @@ geometric shapes.
 """
 
 from .invalid_triangle_error import InvalidTriangleError
+from .invalid_trapezoid_error import InvalidTrapezoidError

@@ -3,7 +3,7 @@ Utility functions for validating parameter values.
 """
 
 from .errors.angles import AcuteAngleError
-from .errors.shapes import InvalidTriangleError
+from .errors.shapes import InvalidTrapezoidError, InvalidTriangleError
 from .errors.values import NegativeValueError, ZeroValueError
 
 
@@ -44,3 +44,13 @@ def validate_triangle(side_a: float, side_b: float, side_c: float):
     """
     if not (side_a + side_b > side_c and side_a + side_c > side_b and side_b + side_c > side_a):
         raise InvalidTriangleError(side_a, side_b, side_c)
+
+
+def validate_trapezoid(base_a: float, base_b: float):
+    """
+    Validates that the given bases can form a trapezoid.
+
+    Raises `InvalidTrapezoidError` if the trapezoid inequality is not satisfied.
+    """
+    if base_a == base_b:
+        raise InvalidTrapezoidError(base_a, base_b)
