@@ -11,8 +11,24 @@ class ShapeError(ABC, Exception):
         self.shape = shape
         self.dimensions = dimensions
         self.reason = reason
-        self.message = f"{self.shape} with dimensions {self.dimensions} is invalid. {self.reason}"
-        super().__init__(self.message)
+        super().__init__(self.__str__)
+
+    def _format_dimensions(self):
+        match self.dimensions:
+            case [d]:
+                return str(d)
+            case [d1, d2]:
+                return f"{d1} and {d2}"
+            case [*rest, last]:
+                return f"{', '.join(map(str, rest))}, and {last}"
+            case _:
+                return "no dimensions"
+
+    def _message(self):
+        dim_label = "dimension" if len(self.dimensions) == 1 else "dimensions"
+        return (
+            f"{self.shape} with {dim_label} {self._format_dimensions()} is invalid. {self.reason}"
+        )
 
     def __str__(self):
-        return f"{self.__class__.__name__}: {self.message}"
+        return f"{self.__class__.__name__}: {self._message()}"
