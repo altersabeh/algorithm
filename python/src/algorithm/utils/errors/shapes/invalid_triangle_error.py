@@ -1,6 +1,6 @@
-class ImpossibleTriangleError(Exception):
+class InvalidTriangleError(Exception):
     """
-    `ImpossibleTriangleError`
+    `InvalidTriangleError`
     =========================
 
     Exception raised when the provided side lengths cannot form a valid triangle.
@@ -11,8 +11,8 @@ class ImpossibleTriangleError(Exception):
         side_c (float): Length of side c.
 
     Example:
-    >>> from algorithm.utils.errors import ImpossibleTriangleError
-    >>> raise ImpossibleTriangleError(1, 2, 10)  # Impossible triangle
+    >>> from algorithm.utils.errors import InvalidTriangleError
+    >>> raise InvalidTriangleError(1, 2, 10)  # Impossible triangle
     """
 
     def __init__(self, side_a: float, side_b: float, side_c: float):

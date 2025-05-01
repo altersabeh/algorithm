@@ -3,7 +3,7 @@ Utility functions for validating parameter values.
 """
 
 from .errors.angles import AcuteAngleError
-from .errors.shapes import ImpossibleTriangleError
+from .errors.shapes import InvalidTriangleError
 from .errors.values import NegativeValueError, ZeroValueError
 
 
@@ -43,4 +43,4 @@ def validate_triangle(side_a: float, side_b: float, side_c: float):
     Raises `ImpossibleTriangleError` if the triangle inequality is not satisfied.
     """
     if not (side_a + side_b > side_c and side_a + side_c > side_b and side_b + side_c > side_a):
-        raise ImpossibleTriangleError(side_a, side_b, side_c)
+        raise InvalidTriangleError(side_a, side_b, side_c)
