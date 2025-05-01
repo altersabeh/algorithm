@@ -1,0 +1,6 @@
+{
+  "files.watcherExclude": {
+    ".mvn/cache/**": true,
+    "target/**": true
+  }
+}

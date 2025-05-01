@@ -1,0 +1,51 @@
+# Java compiled files
+*.class
+
+# Java package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Maven generated files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+.mvn/cache/
+
+# JDT-specific files
+.classpath
+
+# Documentation
+**/documents/
+**/javadoc/
+
+# Generated files by metals when using code-workspace
+.metals/
+.bsp/
+.scala-build/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows system files
+$RECYCLE.BIN/
+[Dd]esktop.ini
+*.lnk
+*.stackdump
+
+# Visual Studio Code settings
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json

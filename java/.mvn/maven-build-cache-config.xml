@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache xmlns="http://maven.apache.org/BUILD-CACHE-CONFIG/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/BUILD-CACHE-CONFIG/1.0.0 https://maven.apache.org/xsd/build-cache-config-1.0.0.xsd">
+
+  <!--
+    Template Maven build cache configuration
+  -->
+
+  <configuration>
+    <enabled>true</enabled>
+    <hashAlgorithm>SHA-512</hashAlgorithm>
+    <validateXml>true</validateXml>
+    <remote enabled="false">
+    </remote>
+    <local>
+      <maxBuildsCached>3</maxBuildsCached>
+    </local>
+    <projectVersioning adjustMetaInf="true" />
+  </configuration>
+
+  <input>
+    <global>
+      <glob>
+        {*.java,*.groovy,*.yaml,*.svcd,*.proto,*assembly.xml,assembly*.xml,*logback.xml,*.vm,*.ini,*.jks,*.properties,*.sh,*.bat}
+      </glob>
+      <includes>
+        <!-- By default, project sources and resources directories are included
+                (src/main/java and src/main/resources) -->
+        <include>src/</include>
+      </includes>
+      <excludes>
+        <!-- We don't want a static "hash" pom resolution (it would conflict the will to
+                adjust the version in the manifest), -->
+        <exclude>pom.xml</exclude>
+        <!-- Also excluding everything located in this project specific folder -->
+      </excludes>
+    </global>
+  </input>
+  <executionControl>
+    <runAlways>
+      <plugins>
+        <plugin artifactId="maven-failsafe-plugin" />
+        <plugin artifactId="maven-surefire-plugin" />
+      </plugins>
+      <goalsLists>
+        <goalsList artifactId="maven-deploy-plugin">
+          <goals>
+            <goal>deploy</goal>
+          </goals>
+        </goalsList>
+        <goalsList artifactId="maven-install-plugin">
+          <goals>
+            <goal>install</goal>
+          </goals>
+        </goalsList>
+      </goalsLists>
+    </runAlways>
+    <reconcile logAllProperties="true">
+      <plugins>
+        <plugin artifactId="maven-compiler-plugin" goal="compile">
+          <reconciles>
+            <reconcile propertyName="source" />
+            <reconcile propertyName="target" />
+            <reconcile propertyName="debug" />
+            <reconcile propertyName="debuglevel" />
+          </reconciles>
+          <!-- whitelist of logged properties-->
+          <logs>
+            <log propertyName="includes" />
+            <log propertyName="excludes" />
+            <log propertyName="argLine" />
+          </logs>
+        </plugin>
+        <plugin artifactId="duplicate-finder-maven-plugin" goal="check">
+          <reconciles>
+            <reconcile propertyName="skip" skipValue="true" />
+            <reconcile propertyName="quiet" skipValue="true" />
+          </reconciles>
+        </plugin>
+        <plugin artifactId="maven-enforcer-plugin" goal="enforce">
+          <reconciles>
+            <reconcile propertyName="skip" skipValue="true" />
+          </reconciles>
+          <!-- blacklisted from logging properties-->
+          <nologs>
+          </nologs>
+        </plugin>
+      </plugins>
+    </reconcile>
+  </executionControl>
+</cache>
