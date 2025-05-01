@@ -7,25 +7,32 @@ from .. import ShapeError
 class InvalidTriangleError(ShapeError):
     """
     `InvalidTriangleError`
-    =========================
-
+    ======================
     Exception raised when the provided side lengths cannot form a valid triangle.
 
-    Parameters:
-        * `side_a (float)` The length of the first side.
-        * `side_b (float)` The length of the second side.
-        * `side_c (float)` The length of the third side.
+    Parameters
+    ----------
+    - `side_a (float)` The length of the first side.
+    - `side_b (float)` The length of the second side.
+    - `side_c (float)` The length of the third side.
 
-    Example:
+    Example
+    -------
+    ```python
+    from algorithm.utils.errors import InvalidTriangleError
 
-        from algorithm.utils.errors import InvalidTriangleError
+    side_a = 3.0
+    side_b = 4.0
+    side_c = 10.0
+    err = InvalidTriangleError(side_a, side_b, side_c)
 
-        side_a = 3.0
-        side_b = 4.0
-        side_c = 10.0
-        err = InvalidTriangleError(side_a, side_b, side_c)
+    print(err)  # INVALID TRIANGLE
+    ```
 
-        print(err) # INVALID TRIANGLE
+    Note
+    ----
+    This error is raised when the sum of the lengths of any two sides is less
+    than or equal to the length of the third side.
     """
 
     def __init__(self, side_a: float, side_b: float, side_c: float):

@@ -7,24 +7,26 @@ from .. import ParameterError
 class ZeroParameterError(ParameterError):
     """
     `ZeroValueError`
-    ==================
-
+    ================
     Exception raised when a zero value is encountered where a nonzero value is
     expected.
 
-    Parameters:
-        * `name (str)` The name of the parameter.
-        * `value (float)` The invalid (zero) value provided.
+    Parameters
+    ----------
+    - `name (str)` The name of the parameter.
+    - `value (float)` The invalid (zero) value provided.
 
-    Example:
+    Example
+    -------
+    ```python
+    from algorithm.utils.errors import ZeroParameterError
 
-        from algorithm.utils.errors import ZeroParameterError
+    name = "length"
+    value = 0.0
+    err = ZeroParameterError(name, value)
 
-        name = "length"
-        value = 0.0
-        err = ZeroParameterError(name, value)
-
-        print(err) # INVALID LENGTH
+    print(err)  # INVALID LENGTH
+    ```
     """
 
     def __init__(self, name: str, value: float):
