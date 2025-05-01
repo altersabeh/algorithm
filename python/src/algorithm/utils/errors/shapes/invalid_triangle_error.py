@@ -23,7 +23,7 @@ class InvalidTriangleError(ShapeError):
 
     def __init__(self, side_a: float, side_b: float, side_c: float):
         super().__init__(
-            shape="Triangle",
-            dimensions=[side_a, side_b, side_c],
-            reason="The side lengths do not satisfy the triangle inequality.",
+            "Triangle",
+            [side_a, side_b, side_c],
+            "The side lengths do not satisfy the triangle inequality.",
         )

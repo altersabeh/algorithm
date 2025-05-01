@@ -22,7 +22,7 @@ class InvalidTrapezoidError(ShapeError):
 
     def __init__(self, base_a: float, base_b: float):
         super().__init__(
-            shape="Trapezoid",
-            dimensions=[base_a, base_b],
-            reason="The bases do not satisfy the trapezoid inequality.",
+            "Trapezoid",
+            [base_a, base_b],
+            "The bases do not satisfy the trapezoid inequality.",
         )
