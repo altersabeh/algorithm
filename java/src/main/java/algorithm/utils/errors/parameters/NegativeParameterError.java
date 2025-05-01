@@ -9,7 +9,7 @@ import algorithm.utils.errors.ParameterError;
  * requires a non-negative value.
  *
  * <h2>Example</h2>
- * 
+ *
  * <pre>
  * <code>
  * import algorithm.utils.errors.parameters.NegativeParameterError;
@@ -23,7 +23,6 @@ import algorithm.utils.errors.ParameterError;
  * </pre>
  */
 public final class NegativeParameterError extends ParameterError {
-
     /**
      * Initializes a new instance of <code>NegativeParameterError</code>.
      * <p>
