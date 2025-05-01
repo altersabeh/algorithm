@@ -1,3 +1,8 @@
+//! # shapes
+//!
+//! This module contains types for handling specific cases related to geometric
+//! shapes.
+
 mod invalid_trapezoid_error;
 mod invalid_triangle_error;
 
