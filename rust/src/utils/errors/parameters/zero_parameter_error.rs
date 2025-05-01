@@ -3,7 +3,7 @@ use std::fmt::{Display, Formatter, Result};
 
 use super::super::ParameterError;
 
-/// # `ZeroParameterError`
+/// # ZeroParameterError
 /// Error returned when a zero value is provided for a parameter that requires a
 /// non-zero value.
 ///

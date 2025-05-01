@@ -3,7 +3,7 @@ use std::fmt::{Display, Formatter, Result};
 
 use super::super::ShapeError;
 
-/// # `InvalidTrapezoidError`
+/// # InvalidTrapezoidError
 /// Error returned when the provided bases cannot form a trapezoid.
 ///
 /// ## Example
