@@ -31,11 +31,16 @@ distribution = true
 package-dir = "src"
 
 [tool.pdm.scripts]
-"build-stub" = "stubgen -p algorithm -o src"
-"cucumber" = "behave"
-"format" = "ruff format src/ tests/ features/"
-"format-check" = "ruff format --check src/ tests/ features/"
+"build:stub" = "stubgen -p algorithm -o src"
+"format" = { composite = ["ruff:format", "ruff:isort"] }
+"format:check" = { composite = ["ruff:check"] }
 "lint" = "pylint src/"
-"pre_build" = "build-stub"
+"pre_build" = { composite = ["build:stub"] }
+"ruff:check" = "ruff format --check ."
+"ruff:format" = "ruff format ."
+"ruff:isort" = "ruff check --fix --select I --fix"
 "test" = "pytest"
-"test-cov" = "pytest --cov=algorithm"
+"test:all" = { composite = ["test:unit", "test:cov", "test:bdd"] }
+"test:bdd" = "behave"
+"test:unit" = "pytest"
+"test:cov" = "pytest --cov=algorithm"
