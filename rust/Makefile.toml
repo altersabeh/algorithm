@@ -1,0 +1,42 @@
+[tasks.clean]
+command = "cargo"
+args = ["clean"]
+
+[tasks.format]
+command = "cargo"
+args = ["fmt"]
+
+[tasks.format-check]
+description = "Runs the cargo rustfmt plugin on check mode."
+category = "Development"
+command = "cargo"
+args = ["fmt", "--check"]
+
+[tasks.clippy]
+command = "cargo"
+args = ["clippy"]
+
+[tasks.build]
+command = "cargo"
+args = ["build"]
+
+[tasks.test]
+install_crate = { install_command = "binstall" }
+command = "cargo"
+args = ["nextest", "run"]
+dependencies = ["build"]
+
+[tasks.cucumber]
+description = "Run cucumber BDD tests."
+category = "Test"
+command = "cargo"
+args = ["cucumber"]
+dependencies = ["build"]
+
+[tasks.llvm-cov]
+description = "Run code coverage analysis using tarpaulin."
+category = "Test"
+install_crate = { install_command = "binstall" }
+command = "cargo"
+args = ["llvm-cov", "--ignore-filename-regex", "tests"]
+dependencies = ["build"]

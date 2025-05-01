@@ -1,0 +1,15 @@
+[package]
+name = "algorithm"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.85.1"
+
+[dev-dependencies]
+cucumber = "0.21.1"
+tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"] }
+
+[[test]]
+name = "cucumber_test"
+path = "features/steps/cucumber_test.rs"
+harness = false
+test = false

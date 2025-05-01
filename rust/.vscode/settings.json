@@ -1,0 +1,10 @@
+{
+  "files.watcherExclude": {
+    "target/**": true,
+    "vendor/**": true
+  },
+  "terminal.integrated.env.windows": {
+    "LLVM_COV": "C:\\msys64\\ucrt64\\bin\\llvm-cov.exe",
+    "LLVM_PROFDATA": "C:\\msys64\\ucrt64\\bin\\llvm-profdata.exe",
+  }
+}
