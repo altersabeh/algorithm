@@ -4,14 +4,14 @@ import pytest
 from fixtures import helper
 
 from algorithm.geometry.solids.rounds import Cylinder, Sphere
-from algorithm.utils.errors.parameters import NegativeValueError, ZeroValueError
+from algorithm.utils.errors.parameters import NegativeParameterError, ZeroParameterError
 
 
 class TestSphere:
     def test_sphere_new_negative_or_zero_radius_returns_error(self):
-        with pytest.raises(NegativeValueError):
+        with pytest.raises(NegativeParameterError):
             Sphere(-1.0)
-        with pytest.raises(ZeroValueError):
+        with pytest.raises(ZeroParameterError):
             Sphere(0.0)
 
     def test_sphere_radius_returns_correct_value(self):
@@ -35,15 +35,15 @@ class TestSphere:
 
 class TestCylinder:
     def test_cylinder_new_negative_or_zero_radius_returns_error(self):
-        with pytest.raises(NegativeValueError):
+        with pytest.raises(NegativeParameterError):
             Cylinder(-1.0, 3.0)
-        with pytest.raises(ZeroValueError):
+        with pytest.raises(ZeroParameterError):
             Cylinder(0.0, 3.0)
 
     def test_cylinder_new_negative_or_zero_height_returns_error(self):
-        with pytest.raises(NegativeValueError):
+        with pytest.raises(NegativeParameterError):
             Cylinder(3.0, -1.0)
-        with pytest.raises(ZeroValueError):
+        with pytest.raises(ZeroParameterError):
             Cylinder(3.0, 0.0)
 
     def test_cylinder_radius_returns_correct_value(self):

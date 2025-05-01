@@ -4,14 +4,14 @@ import pytest
 from fixtures import helper
 
 from algorithm.geometry.planes.curves import Circle
-from algorithm.utils.errors.parameters import NegativeValueError, ZeroValueError
+from algorithm.utils.errors.parameters import NegativeParameterError, ZeroParameterError
 
 
 class TestCircle:
     def test_circle_new_negative_or_zero_radius_returns_error(self):
-        with pytest.raises(NegativeValueError):
+        with pytest.raises(NegativeParameterError):
             Circle(-1.0)
-        with pytest.raises(ZeroValueError):
+        with pytest.raises(ZeroParameterError):
             Circle(0.0)
 
     def test_circle_radius_returns_correct_value(self):

@@ -4,14 +4,14 @@ import pytest
 from fixtures import helper
 
 from algorithm.geometry.planes.quadrilaterals import Rectangle, Square
-from algorithm.utils.errors.parameters import NegativeValueError, ZeroValueError
+from algorithm.utils.errors.parameters import NegativeParameterError, ZeroParameterError
 
 
 class TestSquare:
     def test_square_new_negative_or_zero_side_returns_error(self):
-        with pytest.raises(NegativeValueError):
+        with pytest.raises(NegativeParameterError):
             Square(-1.0)
-        with pytest.raises(ZeroValueError):
+        with pytest.raises(ZeroParameterError):
             Square(0.0)
 
     def test_square_side_returns_correct_value(self):
@@ -35,15 +35,15 @@ class TestSquare:
 
 class TestRectangle:
     def test_rectangle_new_negative_or_zero_width_returns_error(self):
-        with pytest.raises(NegativeValueError):
+        with pytest.raises(NegativeParameterError):
             Rectangle(-1.0, 2.0)
-        with pytest.raises(ZeroValueError):
+        with pytest.raises(ZeroParameterError):
             Rectangle(0.0, 2.0)
 
     def test_rectangle_new_negative_or_zero_height_returns_error(self):
-        with pytest.raises(NegativeValueError):
+        with pytest.raises(NegativeParameterError):
             Rectangle(3.0, -1.0)
-        with pytest.raises(ZeroValueError):
+        with pytest.raises(ZeroParameterError):
             Rectangle(3.0, 0.0)
 
     def test_rectangle_width_and_height_returns_correct_value(self):
