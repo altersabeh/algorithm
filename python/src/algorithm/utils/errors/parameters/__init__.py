@@ -1,8 +1,8 @@
 """
-# values
+# parameters
 
 This module contains types for handling specific error cases related to
-parameter values.
+parameter.
 """
 
 from .negative_parameter_error import NegativeParameterError
