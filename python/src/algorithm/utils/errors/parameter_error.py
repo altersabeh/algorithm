@@ -8,6 +8,14 @@ class ParameterError(ABC, Exception):
 
     @abstractmethod
     def __init__(self, name: str, value: float, required: str):
+        """
+        Base constructor for `ParameterError`.
+
+        - Parameters
+            - **name** The name of the parameter that caused the error.
+            - **value** The invalid value provided.
+            - **required** The required value for the parameter.
+        """
         self.name = name
         self.value = value
         self.required = required

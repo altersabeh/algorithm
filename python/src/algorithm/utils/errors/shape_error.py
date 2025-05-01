@@ -8,6 +8,14 @@ class ShapeError(ABC, Exception):
 
     @abstractmethod
     def __init__(self, shape: str, dimensions: list[float], reason: str):
+        """
+        Base constructor for `ShapeError`.
+
+        - Parameters
+            - **shape** The name of the shape.
+            - **dimensions** The dimensions of the shape.
+            - **reason** The reason for the error.
+        """
         self.shape = shape
         self.dimensions = dimensions
         self.reason = reason
