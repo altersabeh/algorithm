@@ -27,7 +27,11 @@ pub trait ShapeError: Debug + Display + Error {
             | [d] => format!("{}", d),
             | [d1, d2] => format!("{} and {}", d1, d2),
             | [rest @ .., last] if !rest.is_empty() => {
-                let rest_str = rest.iter().map(|d| d.to_string()).collect::<Vec<_>>().join(", ");
+                let rest_str = rest
+                    .iter()
+                    .map(|d| d.to_string())
+                    .collect::<Vec<_>>()
+                    .join(", ");
                 format!("{}, and {}", rest_str, last)
             },
             | _ => "no dimensions".to_string(),
