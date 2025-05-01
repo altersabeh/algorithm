@@ -14,8 +14,8 @@ class RightTriangle(Triangle):
     angle is called the hypotenuse, and the other two sides are called the legs.
     It follows the Pythagorean theorem.
 
-    Example:
-    --------
+    Example
+    -------
     ```python
     from algorithm.geometry.planes.triangles import RightTriangle
 

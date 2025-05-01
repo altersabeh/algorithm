@@ -8,12 +8,12 @@ from algorithm.utils import validation
 class Rectangle(PlaneFigure):
     """
     Rectangle
-    ========
+    =========
 
     A quadrilateral with four right angles and opposite sides equal and
     parallel. Unlike a square, its adjacent sides are not necessarily equal.
 
-    Example:
+    Example
     -------
     ```python
     from algorithm.geometry.planes.quadrilaterals import Rectangle
