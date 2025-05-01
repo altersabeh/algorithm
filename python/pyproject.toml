@@ -31,10 +31,11 @@ distribution = true
 package-dir = "src"
 
 [tool.pdm.scripts]
+"build-stub" = "stubgen -p algorithm -o src"
 "cucumber" = "behave"
 "format" = "ruff format src/ tests/ features/"
 "format-check" = "ruff format --check src/ tests/ features/"
 "lint" = "pylint src/"
-"pre_build" = "stubgen -p algorithm -o src"
+"pre_build" = "build-stub"
 "test" = "pytest"
 "test-cov" = "pytest --cov=algorithm"
