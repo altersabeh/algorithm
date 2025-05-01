@@ -8,16 +8,10 @@ pub trait ShapeError: Debug + Display + Error {
     fn dimensions(&self) -> &[f64];
     fn reason(&self) -> &str;
 
-    fn format_dimensions(&self) -> String {
-        match self.dimensions() {
-            | [d] => format!("{}", d),
-            | [d1, d2] => format!("{} and {}", d1, d2),
-            | [rest @ .., last] if !rest.is_empty() => {
-                let rest_str = rest.iter().map(|d| d.to_string()).collect::<Vec<_>>().join(", ");
-                format!("{}, and {}", rest_str, last)
-            },
-            | _ => "no dimensions".to_string(),
-        }
+    fn display(&self) -> String {
+        let name = type_name::<Self>().split("::").last().unwrap();
+        let message = self.message();
+        format!("{}: {}", name, message)
     }
 
     fn message(&self) -> String {
@@ -28,9 +22,15 @@ pub trait ShapeError: Debug + Display + Error {
         format!("{} with {} {} is invalid: {}.", shape, dim_label, dimensions, reason)
     }
 
-    fn display(&self) -> String {
-        let name = type_name::<Self>().split("::").last().unwrap();
-        let message = self.message();
-        format!("{}: {}", name, message)
+    fn format_dimensions(&self) -> String {
+        match self.dimensions() {
+            | [d] => format!("{}", d),
+            | [d1, d2] => format!("{} and {}", d1, d2),
+            | [rest @ .., last] if !rest.is_empty() => {
+                let rest_str = rest.iter().map(|d| d.to_string()).collect::<Vec<_>>().join(", ");
+                format!("{}, and {}", rest_str, last)
+            },
+            | _ => "no dimensions".to_string(),
+        }
     }
 }
