@@ -25,10 +25,13 @@ class ShapeError(ABC, Exception):
                 return "no dimensions"
 
     def _message(self):
+        shape = self.shape.upper()
         dim_label = "dimension" if len(self.dimensions) == 1 else "dimensions"
-        return (
-            f"{self.shape} with {dim_label} {self._format_dimensions()} is invalid. {self.reason}"
-        )
+        dimensions = self._format_dimensions()
+        reason = self.reason
+        return f"{shape} with {dim_label} {dimensions} is invalid. {reason}"
 
     def __str__(self):
-        return f"{self.__class__.__name__}: {self._message()}"
+        name = self.__class__.__name__
+        message = self._message()
+        return f"{name}: {message}"
