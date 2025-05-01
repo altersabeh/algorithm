@@ -10,6 +10,13 @@ public class ShapeError extends Exception {
     protected final List<Double> dimensions;
     protected final String reason;
 
+    /**
+     * Base constructor for <code>ShapeError</code>.
+     *
+     * @param shape      The name of the shape.
+     * @param dimensions The dimensions of the shape.
+     * @param reason     The reason for the error.
+     */
     public ShapeError(String shape, List<Double> dimensions, String reason) {
         this.shape = shape;
         this.dimensions = dimensions;

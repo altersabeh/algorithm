@@ -8,6 +8,13 @@ public abstract class ParameterError extends Exception {
     protected final double value;
     protected final String required;
 
+    /**
+     * Base constructor for <code>ParameterError</code>.
+     *
+     * @param name     The name of the parameter that caused the error.
+     * @param value    The invalid value provided.
+     * @param required The required value for the parameter.
+     */
     public ParameterError(String name, double value, String required) {
         this.name = name;
         this.value = value;
