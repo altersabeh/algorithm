@@ -9,17 +9,23 @@ class NegativeParameterError(ParameterError):
     `NegativeValueError`
     ====================
 
-    Exception raised when a negative value is encountered where a positive value
-    is expected.
+    Exception raised when a negative value is provided for a parameter that
+    requires a non-negative value.
 
     Parameters:
-        name (str): The name of the parameter or variable that caused the error.
-        value (float): The invalid (negative) value provided.
+        * `name (str)` The name of the parameter.
+        * `value (float)` The invalid (negative) value provided.
 
     Example:
-    >>> from algorithm.utils.errors import NegativeValueError
-    >>> raise NegativeValueError("length", -5)  # Invalid length
+
+        from algorithm.utils.errors import NegativeParameterError
+
+        name = "length"
+        value = -5.0
+        err = NegativeParameterError(name, value)
+
+        print(err) # INVALID LENGTH
     """
 
     def __init__(self, name: str, value: float):
-        super().__init__(name, value, "a positive value")
+        super().__init__(name, value, "a non-negative value")

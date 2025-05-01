@@ -13,12 +13,18 @@ class ZeroParameterError(ParameterError):
     expected.
 
     Parameters:
-        name (str): The name of the parameter or variable that caused the error.
-        value (float): The invalid (zero) value provided.
+        * `name (str)` The name of the parameter.
+        * `value (float)` The invalid (zero) value provided.
 
     Example:
-    >>> from algorithm.utils.errors import ZeroValueError
-    >>> raise ZeroValueError("length", 0)  # Invalid length
+
+        from algorithm.utils.errors import ZeroParameterError
+
+        name = "length"
+        value = 0.0
+        err = ZeroParameterError(name, value)
+
+        print(err) # INVALID LENGTH
     """
 
     def __init__(self, name: str, value: float):
