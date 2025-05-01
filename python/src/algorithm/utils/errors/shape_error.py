@@ -29,7 +29,7 @@ class ShapeError(ABC, Exception):
         dim_label = "dimension" if len(self.dimensions) == 1 else "dimensions"
         dimensions = self._format_dimensions()
         reason = self.reason
-        return f"{shape} with {dim_label} {dimensions} is invalid. {reason}"
+        return f"{shape} with {dim_label} {dimensions} is invalid. {reason}."
 
     def __str__(self):
         name = self.__class__.__name__

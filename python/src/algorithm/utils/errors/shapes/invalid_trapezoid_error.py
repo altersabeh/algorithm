@@ -21,4 +21,4 @@ class InvalidTrapezoidError(ShapeError):
     """
 
     def __init__(self, base_a: float, base_b: float):
-        super().__init__("Trapezoid", [base_a, base_b], "Bases do not form a trapezoid.")
+        super().__init__("Trapezoid", [base_a, base_b], "Bases do not form a trapezoid")
