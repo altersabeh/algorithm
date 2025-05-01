@@ -4,7 +4,7 @@ import pytest
 from fixtures import helper
 
 from algorithm.geometry.solids.rounds import Cylinder, Sphere
-from algorithm.utils.errors import NegativeValueError, ZeroValueError
+from algorithm.utils.errors.values import NegativeValueError, ZeroValueError
 
 
 class TestSphere:
