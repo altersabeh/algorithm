@@ -20,7 +20,8 @@ class ShapeError(ABC, Exception):
             case [d1, d2]:
                 return f"{d1} and {d2}"
             case [*rest, last]:
-                return f"{', '.join(map(str, rest))}, and {last}"
+                rest_str = ", ".join(map(str, rest))
+                return f"{rest_str}, and {last}"
             case _:
                 return "no dimensions"
 
