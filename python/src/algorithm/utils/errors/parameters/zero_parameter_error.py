@@ -1,4 +1,10 @@
-class ZeroValueError(Exception):
+from typing import final
+
+from .. import ParameterError
+
+
+@final
+class ZeroParameterError(ParameterError):
     """
     `ZeroValueError`
     ==================
@@ -16,20 +22,4 @@ class ZeroValueError(Exception):
     """
 
     def __init__(self, name: str, value: float):
-        self.name = name
-        self.value = value
-        super().__init__(self.__str__())
-
-    def __str__(self):
-        error_name = self.__class__.__name__
-        # pylint: disable=consider-using-f-string
-        message = (
-            "{}: Invalid value for '{}'. Received '{}', but '{}' must be a nonzero value."
-        ).format(
-            error_name,
-            self.name.upper(),
-            self.value,
-            self.name.upper(),
-        )
-
-        return message
+        super().__init__(name, value, "a nonzero value")
