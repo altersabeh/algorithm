@@ -4,7 +4,7 @@ import pytest
 from fixtures import helper
 
 from algorithm.geometry.planes.quadrilaterals import Rectangle, Square
-from algorithm.utils.errors import NegativeValueError, ZeroValueError
+from algorithm.utils.errors.values import NegativeValueError, ZeroValueError
 
 
 class TestSquare:
